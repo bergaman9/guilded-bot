@@ -1,19 +1,17 @@
+import discord
 import guilded
 from guilded.ext import commands
 from dotenv import load_dotenv
 import os
-import random
 
 load_dotenv()
 token = os.environ["TOKEN"]
-print(token)
 
 bot = commands.Bot(command_prefix='>')
 
-
 @bot.event
 async def on_ready():
-    print('Ready')
+    print(f'Logged on as {bot.user}!')
 
 @bot.command(description='For when you wanna settle the score some other way')
 async def ping(ctx, *choices: str):
