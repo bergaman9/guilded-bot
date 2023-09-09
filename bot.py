@@ -22,4 +22,8 @@ async def embed(ctx, *choices: str):
     embed = guilded.Embed(title="Türk Oyuncu Topluluğu", description="Merhabalar!")
     await ctx.send(embed=embed)
 
+@bot.command(description="Clears the chat")
+async def clear(ctx, amount: int):
+    await ctx.delete(amount)
+
 bot.run(token)
